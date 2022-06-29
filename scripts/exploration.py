@@ -1,3 +1,6 @@
+import sys
+sys.path.append("../")
+print(sys.path)
 import pandas as pd
 from typing import Union
 from scripts.cleaning import CleanDataFrame
