@@ -36,6 +36,8 @@ class CleanDataFrame:
     def remove_null_row(self, df: pd.DataFrame, columns: str) -> pd.DataFrame:
         for column in columns:
             df = df[~ df[column].isna()]
+        
+        return df
 
     def normal_scale(self, df: pd.DataFrame) -> pd.DataFrame:
         scaller = StandardScaler()
