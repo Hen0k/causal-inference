@@ -1,10 +1,11 @@
 import sys
+sys.path.append('../')
 import unittest
 import pandas as pd
 from scripts.utils import DataLoader
 from scripts.exploration import Analysis
 
-sys.path.append('../')
+
 
 
 class TestAnalysis(unittest.TestCase):

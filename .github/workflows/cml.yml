@@ -20,16 +20,5 @@ jobs:
         run: |     
           echo "# Metrics" > report.md
           
-          echo "## Plots" >> report.md
-
-          echo "### Confusion Matrix" >> report.md
-          cml publish ./notebooks/reports/confusion_matrix.png --md >> report.md
           
-          echo "### Predicted vs Label" >> report.md
-          cml publish ./notebooks/reports/predictions_plot.png --md >> report.md
-
-          echo "### Feature Importance" >> report.md
-          cml publish ./notebooks/reports/feature_importance.png --md >> report.md
-
-          # cat report.md
           cml send-comment report.md

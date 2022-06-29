@@ -1,6 +1,6 @@
 import pandas as pd
 from typing import Union
-from cleaning import CleanDataFrame
+from scripts.cleaning import CleanDataFrame
 
 
 class Analysis:
