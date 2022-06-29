@@ -1,0 +1,35 @@
+name: Report-Metrics
+on: 
+  push:
+    branches:
+      - "main"
+  pull_request:
+    branches:
+      - "main"
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: iterative/setup-cml@v1
+      - name: Metrics
+
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |     
+          echo "# Metrics" > report.md
+          
+          echo "## Plots" >> report.md
+
+          echo "### Confusion Matrix" >> report.md
+          cml publish ./notebooks/reports/confusion_matrix.png --md >> report.md
+          
+          echo "### Predicted vs Label" >> report.md
+          cml publish ./notebooks/reports/predictions_plot.png --md >> report.md
+
+          echo "### Feature Importance" >> report.md
+          cml publish ./notebooks/reports/feature_importance.png --md >> report.md
+
+          # cat report.md
+          cml send-comment report.md
