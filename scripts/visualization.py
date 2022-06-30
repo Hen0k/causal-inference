@@ -14,14 +14,18 @@ class Plotters:
         plt.title(f'Distribution of {column}', size=20, fontweight='bold')
         plt.show()
 
-    def plot_count(self, df: pd.DataFrame, column: str, kind: str="bar") -> None:
+    def plot_count(self, df: pd.DataFrame, column: str, kind: str = "bar") -> None:
         plt.figure(figsize=(self.w, self.h))
         if kind == "bar":
             sns.countplot(data=df, x=column)
         elif kind == "pie":
             count = df[column].value_counts()
-            axis = count.plot.pie(figsize=(self.w, self.h))
-            axis.set_label({"Malignant": "M", "Bengin": "B"})
+            axis = count.plot.pie(figsize=(self.w, self.h),
+                                  autopct="%.1f%%",
+                                  explode=[0.05]*2,
+                                  labels={"Malignant": "M", "Bengin": "B"},
+                                  textprops={"fontsize":15}
+                                  )
             axis.set_ylabel('diagnosis', fontsize=30)
         plt.title(f'Distribution of {column}', size=20, fontweight='bold')
         plt.show()
