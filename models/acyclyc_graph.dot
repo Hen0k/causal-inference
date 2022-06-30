@@ -1,0 +1,37 @@
+strict digraph  {
+diagnosis;
+radius_worst;
+"concave points_mean";
+"concave points_worst";
+perimeter_worst;
+area_mean;
+area_worst;
+radius_mean;
+perimeter_mean;
+diagnosis -> radius_worst  [origin=learned, weight="0.6028690957814496"];
+diagnosis -> perimeter_worst  [origin=learned, weight="0.8034855687849569"];
+diagnosis -> area_mean  [origin=learned, weight="43.910012671775185"];
+diagnosis -> area_worst  [origin=learned, weight="-48.17003442213679"];
+diagnosis -> radius_mean  [origin=learned, weight="4.547485696743551"];
+diagnosis -> perimeter_mean  [origin=learned, weight="0.9024827910819647"];
+radius_worst -> perimeter_worst  [origin=learned, weight="5.856779139340843"];
+radius_worst -> area_mean  [origin=learned, weight="-72.8262680996161"];
+radius_worst -> area_worst  [origin=learned, weight="115.56660271793612"];
+"concave points_mean" -> area_mean  [origin=learned, weight="-0.9994065210824286"];
+"concave points_mean" -> area_worst  [origin=learned, weight="5.443749054491532"];
+"concave points_worst" -> perimeter_worst  [origin=learned, weight="0.42771386199085054"];
+"concave points_worst" -> area_mean  [origin=learned, weight="-2.2043690719402043"];
+"concave points_worst" -> area_worst  [origin=learned, weight="-2.4166950326504026"];
+"concave points_worst" -> radius_mean  [origin=learned, weight="1.0094781341108523"];
+perimeter_worst -> area_mean  [origin=learned, weight="14.158768008522705"];
+perimeter_worst -> area_worst  [origin=learned, weight="3.8080375123986214"];
+area_mean -> area_worst  [origin=learned, weight="1.3467966159483036"];
+radius_mean -> radius_worst  [origin=learned, weight="0.7052707005037918"];
+radius_mean -> perimeter_worst  [origin=learned, weight="-7.60485536367962"];
+radius_mean -> area_mean  [origin=learned, weight="38.24696333981702"];
+radius_mean -> area_worst  [origin=learned, weight="-92.6232918633118"];
+radius_mean -> perimeter_mean  [origin=learned, weight="6.500443709491311"];
+perimeter_mean -> perimeter_worst  [origin=learned, weight="1.294953990262035"];
+perimeter_mean -> area_mean  [origin=learned, weight="-2.2279590825953806"];
+perimeter_mean -> area_worst  [origin=learned, weight="-10.467321188854887"];
+}
