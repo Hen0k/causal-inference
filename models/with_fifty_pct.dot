@@ -1,0 +1,21 @@
+strict digraph  {
+perimeter_mean;
+perimeter_worst;
+area_se;
+area_mean;
+area_worst;
+target;
+perimeter_mean -> perimeter_worst  [origin=learned, weight="1.1069385324536802"];
+perimeter_mean -> area_mean  [origin=learned, weight="4.502701696930144"];
+perimeter_mean -> area_worst  [origin=learned, weight="-21.376457418920474"];
+perimeter_worst -> area_mean  [origin=learned, weight="1.2688628215539262"];
+perimeter_worst -> area_worst  [origin=learned, weight="18.545839371771528"];
+area_se -> perimeter_mean  [origin=learned, weight="1.065406914925168"];
+area_se -> area_mean  [origin=learned, weight="3.1104639365786273"];
+area_mean -> area_worst  [origin=learned, weight="1.3140445777489174"];
+target -> perimeter_mean  [origin=learned, weight="16.752598616151097"];
+target -> perimeter_worst  [origin=learned, weight="7.732384196501327"];
+target -> area_se  [origin=learned, weight="8.384809250679233"];
+target -> area_mean  [origin=learned, weight="12.239636216166643"];
+target -> area_worst  [origin=learned, weight="-7.301758240725584"];
+}
