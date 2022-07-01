@@ -1,11 +1,5 @@
 name: Report-Metrics
-on: 
-  push:
-    branches:
-      - "main"
-  pull_request:
-    branches:
-      - "main"
+on: [push]
 jobs:
   run:
     runs-on: ubuntu-latest
