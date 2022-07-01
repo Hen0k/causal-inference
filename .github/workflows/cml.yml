@@ -23,13 +23,13 @@ jobs:
             cat notebooks/reports/report.txt > report.md
           fi
 
-          if [ notebooks/reports/confusion_matrix.png ]
+          if [ -e notebooks/reports/confusion_matrix.png ]
           then
             echo "# Confusion Matrix" >> report.md
             cml publish notebooks/reports/confusion_matrix.png --md >> report.md
           fi
 
-          if [ notebooks/reports/causal_graph.png ]
+          if [ -e notebooks/reports/causal_graph.png ]
           then
             echo "# Causal Graph" >> report.md
             cml publish notebooks/reports/causal_graph.png --md >> report.md
