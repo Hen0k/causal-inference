@@ -88,7 +88,7 @@ class TrainingPipeline(Pipeline):
 
 
 def plot_cm(y_test, y_pred, model_name):
-    fig = plt.figure(figsize=(12, 12))
+    fig = plt.figure(figsize=(8, 8))
     cm = confusion_matrix(y_test, y_pred)
     sns.heatmap(cm, annot=True, fmt="d")
     plt.title(f"{model_name} predictions confusion metrix", fontsize=25)
