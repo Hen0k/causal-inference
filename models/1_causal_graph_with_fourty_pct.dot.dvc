@@ -1,0 +1,4 @@
+outs:
+- md5: f3a2842c78eab0663af54f14378c8f4e
+  size: 7827
+  path: 1_causal_graph_with_fourty_pct.dot

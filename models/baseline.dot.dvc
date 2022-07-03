@@ -1,0 +1,4 @@
+outs:
+- md5: 4027bf5f64af39effa5b7c0b3fa2bb28
+  size: 7888
+  path: baseline.dot

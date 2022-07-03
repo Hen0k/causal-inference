@@ -1,0 +1,4 @@
+outs:
+- md5: 6df15bad6c7be77e6db5091f6110b36c
+  size: 7548
+  path: 2_causal_graph_with_seventy_pct.dot

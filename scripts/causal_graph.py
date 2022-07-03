@@ -48,7 +48,8 @@ class CausalGraph:
             size: float = 4.0,
             scale: float = 1.0,
             prog: str = "dot",
-            save: bool = False):
+            save: bool = False,
+            image_name: str = "causal_graph"):
         viz = plot_structure(
             self.sm,
             graph_attributes={
@@ -59,8 +60,8 @@ class CausalGraph:
             all_edge_attributes=EDGE_STYLE.WEAK,
             prog=prog,
         )
-        if save:
-            viz.draw(path='reports/causal_graph.png')
+        if save or image_name:
+            viz.draw(path=f'reports/{image_name}.png')
         return Image(viz.draw(format='png'))
 
     def remove_edges_below_threshold(self, threshold: float = 0.0):
