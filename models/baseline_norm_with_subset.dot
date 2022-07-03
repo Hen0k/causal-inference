@@ -1,0 +1,28 @@
+strict digraph  {
+diagnosis;
+perimeter_mean;
+radius_mean;
+area_mean;
+compactness_mean;
+radius_worst;
+area_worst;
+perimeter_worst;
+radius_se;
+perimeter_mean -> diagnosis  [origin=learned, weight="2.1073367331425277"];
+perimeter_mean -> radius_mean  [origin=learned, weight="0.9087487793586406"];
+perimeter_mean -> compactness_mean  [origin=learned, weight="12.914385133350608"];
+perimeter_mean -> radius_se  [origin=learned, weight="2.1601143936560057"];
+radius_mean -> diagnosis  [origin=learned, weight="-3.872454094639775"];
+radius_mean -> compactness_mean  [origin=learned, weight="-12.461720064081787"];
+radius_mean -> radius_se  [origin=learned, weight="-4.479927766836771"];
+area_mean -> diagnosis  [origin=learned, weight="1.2033561557974006"];
+area_mean -> area_worst  [origin=learned, weight="0.9389689422843838"];
+area_mean -> radius_se  [origin=learned, weight="1.9413951030327796"];
+radius_worst -> diagnosis  [origin=learned, weight="3.725211716800189"];
+radius_worst -> compactness_mean  [origin=learned, weight="1.7977134500768177"];
+radius_worst -> area_worst  [origin=learned, weight="0.9739360778263372"];
+radius_worst -> radius_se  [origin=learned, weight="1.9051031180305358"];
+area_worst -> diagnosis  [origin=learned, weight="-2.070502171878659"];
+perimeter_worst -> compactness_mean  [origin=learned, weight="-0.9441974844046989"];
+perimeter_worst -> radius_worst  [origin=learned, weight="0.9939542639308974"];
+}
