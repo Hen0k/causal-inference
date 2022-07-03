@@ -1,7 +1,7 @@
 from typing import List, Tuple
 from causalnex.plots import plot_structure, NODE_STYLE, EDGE_STYLE
 from causalnex.structure.notears import from_pandas, from_pandas_lasso
-from networkx.drawing.nx_pydot import write_dot
+from networkx.drawing.nx_pydot import write_dot, read_dot
 from IPython.display import Image
 
 import warnings
@@ -68,6 +68,9 @@ class CausalGraph:
 
     def save_graph(self, file_name="graph.dot"):
         write_dot(self.sm, f'../models/{file_name}')
+    
+    def read_graph(self, file_name: str):
+        self.sm = read_dot(f'../models/{file_name}')
 
     @staticmethod
     def jaccard_similarity(graph1, graph2):
